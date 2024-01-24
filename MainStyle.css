@@ -21,6 +21,8 @@ body {
 }
 
 .header {
+  width: 100%;
+  position: fixed;
   background-color: #d9f7e6;
   font-weight: 500;
 }
@@ -38,7 +40,7 @@ body {
   display: inline-block;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover {
   background-color: #000000;
   color: white;
 }
