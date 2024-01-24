@@ -5,185 +5,174 @@ button,
 input,
 select,
 textarea {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html,
 body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #content {
-    flex: 1;
-    padding-bottom: 2rem;
+  flex: 1;
+  padding-bottom: 2rem;
 }
 
-/* Header and Navbar styles */
 .header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    background-color: #d9f7e6;
-    font-weight: 500;
-    z-index: 1000;
-    /* Ensures the header stays on top */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #d9f7e6;
+  font-weight: 500;
+  z-index: 1000;
 }
 
 .logo-img {
-    max-height: 30px;
-    width: auto;
+  max-height: 30px;
+  width: auto;
 }
 
 .nav-link {
-    color: #459096;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.7s, color 0.7s;
-    border-radius: 0.25rem;
-    display: inline-block;
+  color: #459096;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.7s, color 0.7s;
+  border-radius: 0.25rem;
+  display: inline-block;
 }
 
 .nav-link:hover {
-    background-color: #000000;
-    color: white;
+  background-color: #000000;
+  color: white;
+}
+
+.main-content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.data-title {
+  font-size: 4rem;
+  color: #102a43;
+  margin-bottom: 0.5rem;
+  margin-top: 6.5rem;
+  font-family: 'Pacifico', cursive;
+  font-weight: 600;
+}
+
+.data-description {
+  font-size: 1.5rem;
+  color: #334e68;
+  margin-bottom: 3rem;
+}
+
+.mode-button {
+  background-color: #9dbf9e;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.mode-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #88a08e;
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.mode-button:hover::before {
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+}
+
+.mode-button:hover {
+  color: #070707;
+  z-index: 1;
+}
+
+.mode-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.analysis-method {
+  border: 1px solid #c0c0c0;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: #f0f4f8;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
-/* Main content styling */
-.main-content {
-    text-align: center;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
+@media (max-width: 768px) {
+  .modes-container {
+    flex-direction: column;
   }
-  
-  /* Header styling */
-  .data-title {
-    font-size: 4rem;
-    color: #102a43; /* A deep, rich blue */
-    margin-bottom: 0.5rem;
-    margin-top: 6.5rem;
-    font-family: 'Pacifico', cursive;
-    font-weight: 600;
-  }
-  
-  .data-description {
-    font-size: 1.5rem;
-    color: #334e68; /* A softer blue for contrast */
-    margin-bottom: 3rem;
-  }
-  
-  /* Button styling */
-  .mode-button {
-    background-color: #9dbf9e; /* A muted green for an earthy, calming feel */
-    color: white;
-    border: none;
-    padding: 1rem 3rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s;
-    position: relative; /* Required for pseudo-elements */
-    overflow: hidden; /* Ensures pseudo-elements don't overflow */
-    transition: color 0.3s, border-color 0.3s, background-color 0.3s; /* Smooth transitions for colors */
-    /* ... */
-  }
-  
-  .mode-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%; /* Large initial width to cover the button */
-    height: 300%; /* Large initial height to cover the button */
-    background-color: #88a08e; /* Same as hover background-color */
-    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s; /* Smooth transitions for pseudo-element */
-    z-index: 0;
-    transform: translate(-50%, -50%); /* Center the pseudo-element */
-    border-radius: 50%; /* Circular shape */
-  }
-  
-  .mode-button:hover::before {
-    width: 0;
-    height: 0;
-    top: 0;
-    left: 0;
-  }
-  
-  .mode-button:hover {
-    color: #070707; /* Color of the button to switch to on hover */
-    z-index: 1;
-  }
-  
-  .mode-button span {
-    position: relative; /* Ensure the text is above the pseudo-element */
-    z-index: 2;
-  }
-  
-  /* Box styling */
+
+  .mode-button,
   .analysis-method {
-    border: 1px solid #c0c0c0; /* Light grey border for subtlety */
-    padding: 2rem;
-    margin-bottom: 2rem;
-    background-color: #f0f4f8; /* Very light background to make the content pop */
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .modes-container {
-      flex-direction: column;
-    }
-  
-    .mode-button,
-    .analysis-method {
-      width: 100%;
-      padding: 1rem;
-    }
-  }
-  
-  /* Footer styling */
-  .footer {
-    background-color: #102a43; /* Match the footer to the title color */
-    color: #ffffff;
-    padding: 1.5rem 0;
-    font-size: 1rem;
-  }
-  
-
-
-/* Footer styles */
-.footer {
-    background-color: #4a5666;
-    color: #e5e7eb;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    font-size: 0.875rem;
+    padding: 1rem;
+  }
+}
+
+
+.footer {
+  background-color: #102a43;
+  color: #ffffff;
+  padding: 1.5rem 0;
+  font-size: 1rem;
+}
+
+
+
+
+.footer {
+  background-color: #4a5666;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.875rem;
 }
 
 .footer-link {
-    color: #e5e7eb;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s, color 0.3s;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .footer-link:hover {
-    background-color: #3b4252;
-    /* Slightly lighter than footer background for hover effect */
-    color: #ffffff;
-}
+  background-color: #3b4252;
 
-/* Additional styles for the Data page can be added below */
-/* ... */
+  color: #ffffff;
+}
